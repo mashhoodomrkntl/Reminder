@@ -1,6 +1,6 @@
 .container {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 35px auto;
   padding: 20px;
   background-color: rgba(27, 24, 23, 0.621);
   box-shadow: 0px 1px 9px 2px #646cff;
@@ -14,30 +14,89 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 15px;
 }
 button {
   border-radius: 5px;
-  border: 1px solid transparent;
+  border: 1px solid #646cff;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  font-weight: bold;
+  background-color: rgba(19, 0, 45, 0.475);
   cursor: pointer;
   transition: border-color 0.25s;
-  border-color: #646cff;
 }
 button:hover {
   border-color: #787eeb;
   box-shadow: inset 0px 1px 10px 1px #2b31a2;
- 
 }
 input {
-    flex: 1;
+  flex: 1;
   color: #f4f4f4;
   font-size: 18px;
   border: none;
   outline: none;
   padding: 4px 10px;
   border: 1px solid #787eeb;
+  background-color: rgba(19, 0, 45, 0.475);
+}
+.reminder-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.reminder-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(19, 0, 45, 0.475);
+  padding: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s;
+}
+.reminder-list li:hover {
+  transform: scale(1.03);
+  box-shadow: inset 0px 1px 10px 1px #2b31a2;
+}
+p {
+  color: red;
+  margin-top: 40px;
+}
+.dlt-btn {
+  background-color: rgb(255, 6, 6);
+  border: none;
+}
+h2 {
+  font-size: 34px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 1.3px;
+  color: #c0bdbd;
+}
+
+@media (max-width: 579px) {
+  h2 {
+    font-size: 28px;
+    margin-bottom: 34px;
+  }
+  .container {
+    margin: 35px 10px;
+    padding: 15px;
+  }
+  .input-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  input {
+    font-size: 15px;
+    padding: 13px 10px;
+    border: 1px solid #787eeb;
+    background-color: rgba(19, 0, 45, 0.475);
+  }
+  .dlt-btn {
+    margin-left: 4px;
+  }
 }
