@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Reminder.css";
 
 const Reminder = () => {
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.toLocaleDateString()} ${currentDate.toLocaleTimeString()}`;
+
   const [reminder, setReminder] = useState(() => {
     const storedReminders = localStorage.getItem("reminders");
     return storedReminders ? JSON.parse(storedReminders) : [];
@@ -19,7 +22,7 @@ const Reminder = () => {
 
   const handleReminder = () => {
     if (newReminder.trim()) {
-      setReminder([...reminder, newReminder]);
+      setReminder([...reminder, reminderObj]);
       setNewReminder("");
     }
   };
@@ -27,7 +30,11 @@ const Reminder = () => {
   const handleDelete = (index) => {
     setReminder(reminder.filter((_, itemIndex) => itemIndex !== index));
   };
-
+  const reminderObj = {
+    text: newReminder,
+    date: formattedDate,
+  };
+  console.log(reminder);
   return (
     <div className="container">
       <h2>Reminder App</h2>
@@ -38,21 +45,33 @@ const Reminder = () => {
           placeholder="Enter a reminder"
           type="text"
         />
-        <button className="button1" onClick={handleReminder}><span>Add Reminder    </span></button>
+        <button className="button1" onClick={handleReminder}>
+          <span>Add Reminder </span>
+        </button>
       </div>
       {reminder.length > 0 ? (
         <ul className="reminder-list">
           {reminder.map((value, index) => (
             <li key={index}>
-              {value}
-              <button className="dlt-btn" onClick={() => handleDelete(index)}>
-                Delete
-              </button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "18px",
+                }}
+              >
+                <p style={{color:' rgb(255, 6, 6)',fontSize:"12px"}}>{value.date}</p>
+                <button className="dlt-btn" onClick={() => handleDelete(index)}>
+                  Delete
+                </button>
+              </div>
+              <p>{value.text}</p>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No Reminders Yet!</p>
+        <p className="no-rmd">No Reminders Yet!</p>
       )}
     </div>
   );

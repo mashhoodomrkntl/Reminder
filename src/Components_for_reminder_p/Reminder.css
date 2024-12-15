@@ -1,3 +1,6 @@
+P {
+  margin: 0;
+}
 .container {
   max-width: 500px;
   margin: 35px auto;
@@ -30,12 +33,13 @@
   background-clip: padding-box;
   animation: shadowMove 3s linear infinite;
 }
-button {
+.dlt-btn {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 8px;
-
+  border-radius: 5px;
+  background-color: rgb(255, 6, 6);
+  border: none;
   color: white;
   border: 3px solid transparent;
 }
@@ -94,29 +98,26 @@ input {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column-reverse; 
 }
 .reminder-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+   
   background-color: rgba(0, 0, 0, 0.475);
   padding: 10px;
   margin-bottom: 15px;
   transition: transform 0.4s;
-  font-size: 22px;
+  font-size: 20px;
 }
 .reminder-list li:hover {
   transform: scale(1.03);
   box-shadow: inset 0px 1px 10px 1px #2b31a2;
 }
-p {
+.no-rmd {
   color: red;
   margin-top: 40px;
 }
-.dlt-btn {
-  background-color: rgb(255, 6, 6);
-  border: none;
-}
+
 h2 {
   font-size: 34px;
   line-height: 1.1;
@@ -146,5 +147,6 @@ h2 {
   }
   .dlt-btn {
     margin-left: 4px;
+    padding: 4px 12px;
   }
 }
