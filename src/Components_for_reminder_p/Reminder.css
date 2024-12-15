@@ -7,7 +7,6 @@
   transition: all 0.5s ease-in-out;
   border-radius: 7px;
   animation: shadowMove 2s linear infinite;
-
 }
 .container:hover {
   box-shadow: 0px 4px 20px 6px #2b31a2;
@@ -21,12 +20,12 @@
 .button1 {
   position: relative;
   padding: 16px 28px;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   color: white;
   background: black;
   border: 3px solid transparent;
-  border-radius: 12px;
+  border-radius: 5px;
   cursor: pointer;
   background-clip: padding-box;
   animation: shadowMove 3s linear infinite;
@@ -64,24 +63,22 @@ button {
 }
 
 @keyframes shadowMove {
-    0% {
-      box-shadow: 0 0 10px #ff7f00;  /* Sunset Orange */
-    }
-    20% {
-      box-shadow: 0 0 10px #ff00a2;  /* Gold */
-    }
-    50% {
-      box-shadow: 0 0 10px #ff0033;  /* Deep Red */
-    }
-    70% {
-      box-shadow: 0 0 10px #7f00ff;  /* Violet */
-    }
-    100% {
-      box-shadow: 0 0 10px #ff7f00;  /* Sunset Orange */
-    }
+  0% {
+    box-shadow: 0 0 10px #ff7f00; /* Sunset Orange */
   }
-      
-  
+  20% {
+    box-shadow: 0 0 10px #ff00a2; /* Gold */
+  }
+  50% {
+    box-shadow: 0 0 10px #ff0033; /* Deep Red */
+  }
+  70% {
+    box-shadow: 0 0 10px #7f00ff; /* Violet */
+  }
+  100% {
+    box-shadow: 0 0 10px #ff7f00; /* Sunset Orange */
+  }
+}
 
 input {
   flex: 1;
@@ -92,7 +89,6 @@ input {
   padding: 4px 10px;
   border: 1px solid #787eeb;
   background-color: rgba(0, 0, 0, 0.475);
-  
 }
 .reminder-list {
   list-style: none;
@@ -107,6 +103,7 @@ input {
   padding: 10px;
   margin-bottom: 15px;
   transition: transform 0.4s;
+  font-size: 22px;
 }
 .reminder-list li:hover {
   transform: scale(1.03);
@@ -126,7 +123,6 @@ h2 {
   text-align: center;
   letter-spacing: 1.3px;
   color: #c0bdbd;
-  
 }
 
 @media (max-width: 579px) {
