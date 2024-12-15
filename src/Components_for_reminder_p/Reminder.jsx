@@ -38,7 +38,7 @@ const Reminder = () => {
           placeholder="Enter a reminder"
           type="text"
         />
-        <button onClick={handleReminder}>Add Reminder</button>
+        <button className="button1" onClick={handleReminder}><span>Add Reminder    </span></button>
       </div>
       {reminder.length > 0 ? (
         <ul className="reminder-list">

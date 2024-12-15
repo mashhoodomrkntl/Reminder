@@ -6,6 +6,8 @@
   box-shadow: 0px 1px 9px 2px #646cff;
   transition: all 0.5s ease-in-out;
   border-radius: 7px;
+  animation: shadowMove 2s linear infinite;
+
 }
 .container:hover {
   box-shadow: 0px 4px 20px 6px #2b31a2;
@@ -16,23 +18,71 @@
   justify-content: center;
   margin-bottom: 15px;
 }
-button {
-  border-radius: 5px;
-  border: 1px solid #646cff;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.button1 {
+  position: relative;
+  padding: 16px 28px;
+  font-size: 16px;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  font-weight: bold;
-  background-color: rgba(19, 0, 45, 0.475);
+  color: white;
+  background: black;
+  border: 3px solid transparent;
+  border-radius: 12px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  background-clip: padding-box;
+  animation: shadowMove 3s linear infinite;
 }
-button:hover {
-  border-color: #787eeb;
-  box-shadow: inset 0px 1px 10px 1px #2b31a2;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+
+  color: white;
+  border: 3px solid transparent;
 }
+/* button::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(115deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% 100%;
+    border-radius: 12px;
+    z-index: -1;
+    animation: moveGradient 2s linear infinite;
+  } */
+
+@keyframes moveGradient {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shadowMove {
+    0% {
+      box-shadow: 0 0 10px #ff7f00;  /* Sunset Orange */
+    }
+    20% {
+      box-shadow: 0 0 10px #ff00a2;  /* Gold */
+    }
+    50% {
+      box-shadow: 0 0 10px #ff0033;  /* Deep Red */
+    }
+    70% {
+      box-shadow: 0 0 10px #7f00ff;  /* Violet */
+    }
+    100% {
+      box-shadow: 0 0 10px #ff7f00;  /* Sunset Orange */
+    }
+  }
+      
+  
+
 input {
   flex: 1;
   color: #f4f4f4;
@@ -41,7 +91,8 @@ input {
   outline: none;
   padding: 4px 10px;
   border: 1px solid #787eeb;
-  background-color: rgba(19, 0, 45, 0.475);
+  background-color: rgba(0, 0, 0, 0.475);
+  
 }
 .reminder-list {
   list-style: none;
@@ -52,7 +103,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(19, 0, 45, 0.475);
+  background-color: rgba(0, 0, 0, 0.475);
   padding: 10px;
   margin-bottom: 15px;
   transition: transform 0.4s;
@@ -75,6 +126,7 @@ h2 {
   text-align: center;
   letter-spacing: 1.3px;
   color: #c0bdbd;
+  
 }
 
 @media (max-width: 579px) {
